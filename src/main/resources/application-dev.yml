@@ -4,20 +4,15 @@
 spring:
   datasource:
     dynamic:
-      master:
-        username: ${PLAY_READONLY_JDBC_USERNAME}
-        password: ${PLAY_READONLY_JDBC_PASSWORD}
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://192.168.0.207:3306/lamp20170928?autoReconnect=true&useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&serverTimezone=UTC
-        type: com.alibaba.druid.pool.DruidDataSource
-      slave:
-        one:
+      primary: master #设置默认的数据源或者数据源组,默认值即为master
+      datasource:
+        master:
           username: ${PLAY_READONLY_JDBC_USERNAME}
           password: ${PLAY_READONLY_JDBC_PASSWORD}
           driver-class-name: com.mysql.cj.jdbc.Driver
           url: jdbc:mysql://192.168.0.207:3306/lamp20170928?autoReconnect=true&useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&serverTimezone=UTC
           type: com.alibaba.druid.pool.DruidDataSource
-        two:
+        slave:
           username: ${PLAY_READONLY_JDBC_USERNAME}
           password: ${PLAY_READONLY_JDBC_PASSWORD}
           driver-class-name: com.mysql.cj.jdbc.Driver

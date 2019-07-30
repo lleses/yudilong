@@ -55,7 +55,7 @@ public class ApplicationTests {
 
     @Test
     public void getCgoods() {
-        CgoodsTemplate cgoodsTemplate = cgoodsDao.selectById("1149166740237045761");
+        CgoodsTemplate cgoodsTemplate = cgoodsDao.selectById("300");
         System.out.println(cgoodsTemplate);
     }
 

@@ -1,6 +1,5 @@
 package com.dl.demo.dao;
 
-import com.baomidou.dynamic.datasource.DS;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.dl.demo.entity.Eds2TvUser;
 import org.apache.ibatis.annotations.Mapper;

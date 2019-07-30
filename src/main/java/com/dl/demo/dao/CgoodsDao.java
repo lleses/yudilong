@@ -2,15 +2,15 @@ package com.dl.demo.dao;
 
 import com.baomidou.dynamic.datasource.DS;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.dl.demo.entity.Eds2TvUser;
+import com.dl.demo.entity.CgoodsTemplate;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
 @Mapper
-public interface UserDao extends BaseMapper<Eds2TvUser> {
+public interface CgoodsDao extends BaseMapper<CgoodsTemplate> {
 
-    List<Eds2TvUser> getUser();
-
+    @DS("two")
+    List<CgoodsTemplate> getAll();
 
 }

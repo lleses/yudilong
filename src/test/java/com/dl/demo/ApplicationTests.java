@@ -1,6 +1,8 @@
 package com.dl.demo;
 
+import com.dl.demo.dao.CgoodsDao;
 import com.dl.demo.dao.UserDao;
+import com.dl.demo.entity.CgoodsTemplate;
 import com.dl.demo.entity.Eds2TvUser;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -19,6 +21,8 @@ public class ApplicationTests {
 
     @Autowired
     private UserDao userDao;
+    @Autowired
+    private CgoodsDao cgoodsDao;
 
     @Test
     public void add() {
@@ -40,11 +44,26 @@ public class ApplicationTests {
         System.out.println(user);
     }
 
+
     @Test
     public void getList() {
         PageHelper.startPage(1, 2);
         List<Eds2TvUser> list = userDao.getUser();
         PageInfo<Eds2TvUser> page = new PageInfo<>(list);
+        System.out.println(page);
+    }
+
+    @Test
+    public void getCgoods() {
+        CgoodsTemplate cgoodsTemplate = cgoodsDao.selectById("1149166740237045761");
+        System.out.println(cgoodsTemplate);
+    }
+
+    @Test
+    public void getCgoodsList() {
+        PageHelper.startPage(1, 2);
+        List<CgoodsTemplate> list = cgoodsDao.getAll();
+        PageInfo<CgoodsTemplate> page = new PageInfo<>(list);
         System.out.println(page);
     }
 

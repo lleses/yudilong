@@ -1,0 +1,12 @@
+1.pom.xml
+    <!--分页-->
+    <dependency>
+        <groupId>com.github.pagehelper</groupId>
+        <artifactId>pagehelper-spring-boot-starter</artifactId>
+        <version>1.2.8</version>
+    </dependency>
+
+2.code
+    PageHelper.startPage(1, 2);
+    List<CgoodsTemplate> list = cgoodsDao.getAll();
+    PageInfo<CgoodsTemplate> page = new PageInfo<>(list);

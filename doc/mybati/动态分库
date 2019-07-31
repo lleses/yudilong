@@ -1,0 +1,31 @@
+
+1.pom.xml
+    <!--MyBatis 动态分库-->
+    <dependency>
+        <groupId>com.baomidou</groupId>
+        <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+        <version>2.5.6</version>
+    </dependency>
+
+2.application.yml
+    #@DS("slave") 选择从库
+    spring:
+      datasource:
+        dynamic:
+          primary: master #设置默认的数据源或者数据源组,默认值即为master
+          datasource:
+            master:
+              username: ${PLAY_READONLY_JDBC_USERNAME}
+              password: ${PLAY_READONLY_JDBC_PASSWORD}
+              driver-class-name: com.mysql.cj.jdbc.Driver
+              url: jdbc:mysql://192.168.0.207:3306/lamp20170928?autoReconnect=true&useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&serverTimezone=UTC
+              type: com.alibaba.druid.pool.DruidDataSource
+            slave:
+              username: ${PLAY_READONLY_JDBC_USERNAME}
+              password: ${PLAY_READONLY_JDBC_PASSWORD}
+              driver-class-name: com.mysql.cj.jdbc.Driver
+              url: jdbc:mysql://192.168.0.207:3306/eds_channel?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
+              type: com.alibaba.druid.pool.DruidDataSource
+
+3.@SpringBootApplication(exclude = DruidDataSourceAutoConfigure.class)
+4.@DS("slave") 可以注解在方法上和类上，同时存在方法注解优先于类上注解。

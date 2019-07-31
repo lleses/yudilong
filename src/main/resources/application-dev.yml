@@ -1,6 +1,14 @@
-#没有@DS	主库
-#@DS("one")	存在slave指定slave，不存在则主库
-#@DS	根据DynamicDataSourceStrategy策略，选择一个从库。默认负载均衡策略。
+
+server:
+  port: 8080
+  #tomcat
+  tomcat:
+    uri-encoding: utf-8
+    max-threads: 1000
+    min-spare-threads: 30
+  connection-timeout: 5000ms
+
+#@DS("slave") 选择从库
 spring:
   datasource:
     dynamic:
@@ -10,11 +18,21 @@ spring:
           username: ${PLAY_READONLY_JDBC_USERNAME}
           password: ${PLAY_READONLY_JDBC_PASSWORD}
           driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://192.168.0.207:3306/lamp20170928?autoReconnect=true&useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&serverTimezone=UTC
+          url:
           type: com.alibaba.druid.pool.DruidDataSource
         slave:
           username: ${PLAY_READONLY_JDBC_USERNAME}
           password: ${PLAY_READONLY_JDBC_PASSWORD}
           driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://192.168.0.207:3306/eds_channel?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
+          url:
           type: com.alibaba.druid.pool.DruidDataSource
+
+##刷新mapper 调试神器
+mybatis-plus:
+  global-config:
+    refresh-mapper: true
+
+#其他
+dc:
+  filePath: /Users/didi/Temp/dcFile/
+  fileUrlPath: /dcFile/

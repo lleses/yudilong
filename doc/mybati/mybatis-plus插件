@@ -1,0 +1,37 @@
+1.pom.xml
+
+2.application.yml
+    # Mybatis配置
+    mybatis-plus:
+      mapper-locations: classpath:/mapper/*Mapper.xml
+      #实体扫描，多个package用逗号或者分号分隔
+      typeAliasesPackage: com.eds.tv.entity
+
+3.entity注解
+    @TableName
+        @TableName("eds2_tv_user")
+        public class Eds2TvUser {
+        }
+        这种情况下。可以去掉 @TableName("eds2_tv_user")
+
+    @TableId
+        @TableId(value = "user_id", type = IdType.ID_WORKER)
+        private Long userId;
+        这种情况下。可以写成  @TableId(type = IdType.ID_WORKER)
+
+    @JsonFormat
+        @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+
+    @TableField
+        @TableField("machineCode")
+        private String machineCode;
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-package com.dl.demo;
+package com.dl;
 
 import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure;
 import org.springframework.boot.SpringApplication;

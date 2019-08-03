@@ -17,6 +17,7 @@ public class UserController {
     private Logger logger = LoggerFactory.getLogger(getClass());
 
     @GetMapping("/test1")
+    @RequestMapping
     public Result test1() {
         return ResultGenerator.getSuccessResult("444");
     }

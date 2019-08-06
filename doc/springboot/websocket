@@ -1,0 +1,20 @@
+1.pom.xml
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-websocket</artifactId>
+    </dependency>
+
+2.WebSocketConfig
+3.WebSocket
+4.WebSocketController
+
+
+
+
+
+
+
+
+
+
+

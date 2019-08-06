@@ -28,6 +28,6 @@ public class ApplicationTest {
     @After
     public void after() {
         long time = System.currentTimeMillis() - begin;
-        System.out.println("总耗时:" + time+"ms");
+        System.out.println("总耗时:" + time + "ms");
     }
 }

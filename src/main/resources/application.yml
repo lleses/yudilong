@@ -3,6 +3,10 @@ spring:
   profiles:
     # 环境 dev|pre|pro
     active: dev
+  #模板
+  thymeleaf:
+    prefix: classpath:/templates/
+
 
 # Mybatis配置
 mybatis-plus:
@@ -10,11 +14,8 @@ mybatis-plus:
   #实体扫描，多个package用逗号或者分号分隔
   #typeAliasesPackage: com.eds.tv.entity
 
-logging:
-  path: C:/Users/root/Desktop/eds/TV/log
-  file: my.log
-  level:
-    org.springframework.web: error
+
+
 
 
 

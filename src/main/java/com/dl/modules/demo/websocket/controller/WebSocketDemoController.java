@@ -6,13 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * websocket客户端
- */
 @RestController
-@RequestMapping("/socket")
-public class WebSocketController {
-
+@RequestMapping("/webSocketDemo")
+public class WebSocketDemoController {
 
     @Autowired
     private WebSocket webSocket;

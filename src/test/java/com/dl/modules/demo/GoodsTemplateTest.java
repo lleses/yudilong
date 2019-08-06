@@ -30,4 +30,6 @@ public class GoodsTemplateTest extends ApplicationTest {
         System.out.println(page);
     }
 
+
+
 }

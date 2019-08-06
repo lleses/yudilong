@@ -10,31 +10,11 @@ mybatis-plus:
   #实体扫描，多个package用逗号或者分号分隔
   #typeAliasesPackage: com.eds.tv.entity
 
-#阿里云OSS
-oss:
-  endpoint:
-  accessKey:
-  accesskeysecret:
-  bucketname:
-  baseurl:
-
-wx:
-  pay:
-    appId:       #微信公众号或者小程序等的appid
-    mchId:   #微信支付商户号
-    mchKey:  #微信支付商户密钥
-    subAppId: #服务商模式下的子商户公众账号IDlogging
-    subMchId: #服务商模式下的子商户号
-    keyPath:  # p12证书的位置，可以指定绝对路径，也可以指定类路径（以classpath:开头）
-
-  miniapp:
-    configs:
-      - appid:      #微信小程序的appid
-        secret:   #微信小程序的Secret
-        token:          #微信小程序消息服务器配置的token
-        aesKey:  #微信小程序消息服务器配置的EncodingAESKey
-        msgDataFormat:
-
 logging:
+  path: C:/Users/root/Desktop/eds/TV/log
+  file: my.log
   level:
     org.springframework.web: error
+
+
+

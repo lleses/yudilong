@@ -24,7 +24,7 @@ public class UserController {
 
     @GetMapping("/test2")
     public Result test2() throws IOException {
-        int a=1;
+        int a = 1;
         if (a == 1) {
             throw new IOException("id不能为空！");
         }

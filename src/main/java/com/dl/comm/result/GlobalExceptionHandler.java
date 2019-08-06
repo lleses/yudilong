@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-	private Logger logger = LoggerFactory.getLogger(getClass());
+    private Logger logger = LoggerFactory.getLogger(getClass());
 
-	@ExceptionHandler(Exception.class)
-	public Result handleException(Exception e){
-		logger.error(e.getMessage(), e);
-		return ResultGenerator.getFailResult("接口内部错误,请联系小E");
-	}
+    @ExceptionHandler(Exception.class)
+    public Result handleException(Exception e) {
+        logger.error(e.getMessage(), e);
+        return ResultGenerator.getFailResult("接口内部错误,请联系小E");
+    }
 
 
 }

@@ -1,21 +1,23 @@
-package com.dl.comm.interceptor;
+package com.dl.comm.config;
 
+import com.dl.comm.interceptor.InterceptorHandle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * 拦截器
+ * WebMvc 配置
  */
 @Configuration
-public class InterceptorConfig extends WebMvcConfigurationSupport {
+public class WebMvcConfig implements WebMvcConfigurer {
 
     @Autowired
     InterceptorHandle authorizationInterceptor;
 
+    /** 拦截器 */
     @Override
-    protected void addInterceptors(InterceptorRegistry registry) {
+    public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(authorizationInterceptor);
     }
 

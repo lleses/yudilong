@@ -1,0 +1,11 @@
+
+Controller
+    @RestController
+    @RequestMapping("/demo/user")
+    @GetMapping("/test2")
+    @PostMapping("/test2")
+    @RequestParam("name") String name
+
+
+@PostConstruct
+    服务器加载Servlet的时候运行，并且只会被服务器调用一次

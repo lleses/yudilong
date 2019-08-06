@@ -1,9 +1,0 @@
-
-
-远程监听debug
-1.edit configurations
-2.+
-3.Remote
-4.maven打包
-5.命令 java -jar -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 xxx.jar
-6.Remote控制台debug

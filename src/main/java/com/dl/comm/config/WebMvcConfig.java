@@ -13,12 +13,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebMvcConfig implements WebMvcConfigurer {
 
     @Autowired
-    InterceptorHandle authorizationInterceptor;
+    InterceptorHandle interceptorHandle;
 
     /** 拦截器 */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(authorizationInterceptor);
+        registry.addInterceptor(interceptorHandle);
     }
 
 

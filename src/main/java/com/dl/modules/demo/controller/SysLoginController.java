@@ -1,9 +1,8 @@
-package com.dl.modules.sys.controller;
+package com.dl.modules.demo.controller;
 
 
 import com.dl.comm.utils.RandomValidateCodeUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,11 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@Slf4j
 @RestController
 @RequestMapping("sys/login")
 public class SysLoginController {
-
-    private Logger logger = LoggerFactory.getLogger(getClass());
 
     /**
      * 生成验证码
@@ -30,7 +28,7 @@ public class SysLoginController {
             RandomValidateCodeUtil randomValidateCode = new RandomValidateCodeUtil();
             randomValidateCode.getRandcode(request, response);//输出验证码图片方法
         } catch (Exception e) {
-            logger.error("获取验证码失败>>>>   ", e);
+            log.error("获取验证码失败>>>>   ", e);
         }
     }
 }

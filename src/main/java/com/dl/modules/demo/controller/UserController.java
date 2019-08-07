@@ -24,18 +24,7 @@ public class UserController {
 
     @GetMapping("/test2")
     public Result test2() throws IOException {
-        int a = 1;
-        if (a == 1) {
-            throw new IOException("id不能为空！");
-        }
-        return ResultGenerator.getSuccessResult("444");
+        throw new IOException("id不能为空！");
     }
 
-    @GetMapping("/test3")
-    public Result test3() {
-        logger.info("info 11111");
-        logger.debug("debug 1111");
-        logger.error("error 11111");
-        return ResultGenerator.getSuccessResult("444");
-    }
 }
